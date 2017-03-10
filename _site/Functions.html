@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html class="route- route-post section-functions">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Funcitons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codehubplatform.github.io/EnglishWebContent/">
+  <meta property="og:title" content="CodeHub">
+  <meta property="og:description" content="CodeHub - is the best way to browse and learn development">
+  <meta property="og:site_name" content="CodeHub">
+  <meta property="og:image" content="https://codehubplatform.github.io/EnglishWebContent/images/marksheet-facebook.png">
+  <meta property="fb:app_id" content="470761896424893">
+  <link rel="manifest" href="/EnglishWebContent/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://codehubplatform.github.io/EnglishWebContent/css/main.css">
+  <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="/css/ie.css" />
+  <![endif]-->
+</head>
+
+  <body>
+    
+
+    <div class="page-hero"></div>
+    <div class="page-body">
+
+      <main class="page-container">
+  <section class="heading">
+    <div class="container">
+      <h1>
+        <em>3.3</em>
+        Funcitons
+      </h1>
+      <h2></h2>
+      
+    </div>
+  </section>
+
+  <div class="page-content">
+    <div class="container">
+      
+
+
+      <article class="content">
+        <h3 id="udefinitionu">1.1<u>Definition:</u></h3>
+
+<p>Piece of code used to accomplish certain task.<br />
+A function contains it’ name, return type,
+arguments and body.</p>
+
+<p>Example: Function to print “hello”
+# code:</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                <span class="kt">void</span> <span class="nf">func</span> <span class="p">()</span>  
+<span class="p">{</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span><span class="c1">// body of function
+</span><span class="p">}</span></code></pre></figure>
+
+<p>In the example above we can see the following:</p>
+
+<ul>
+  <li>Function name: func</li>
+  <li>Return type: void</li>
+  <li>Body: printf(“hello”);</li>
+</ul>
+
+<h3 id="uadvantages-of-using-functionsu">1.2 <u>Advantages of using functions:</u></h3>
+<ol>
+  <li>We can divide c program in small sized codes (modules).</li>
+  <li>We can call module whenever require. </li>
+  <li>Modular programming makes C program more readable.</li>
+  <li>Modules once created, can be re-used in other programs.</li>
+</ol>
+
+<h3 id="utypes-of-functionsu">1.3 <u>Types of Functions:</u></h3>
+
+<ol>
+  <li>Predefined functions: </li>
+  <ol>
+    <li>Functions which are already defined are predefined functions.</li>
+    <li>These function’s name or task can’t be changed by programmers and they are used for specific tasks.</li>
+    <li>Example: printf(), scanf(), getch(), putch() etc.</li>
+  </ol>  
+</ol>
+
+<h3 id="uuser-defined-functionsu">2.<u>User defined functions:</u></h3>
+
+<ol>
+    <li>Functions which are defined by user or programmers with respect to their need.</li>
+    <li>Name of function, return type and body is defined by user.</li>
+    <li>Example: Program to print Hello World.</li>
+  </ol>
+
+<p>#code</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">  
+<span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">void</span> <span class="nf">intro</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">intro</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>In example given above intro() is a user defined function where function prototype and definition is given by user according to his/her requirements.</li>
+  <li>Whereas printf() is a predefined function whose definition and prototype can’t be changed by user.</li>
+</ul>
+
+<h3 id="ua-function-prototypeu">1.4 <u>A Function Prototype:</u></h3>
+
+<p>In C, all functions must be written to return a specific TYPE of information and to take in specific types of data (parameters). This information is communicated to the compiler via a function prototype.<br />
+Here is the syntax for the function declaration or <strong>Prototype:</strong>
+<em>Return-type name_of_function (parameter_type parameter_name,…)</em><br />
+In parenthesis we can write many parameters based on our requirements.<br /></p>
+
+<p><strong>Example of Functions:</strong><br /></p>
+
+<p>If in a program we have to add two numbers 3 times we can write it in following way.<br />
+# code</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">sum</span><span class="p">;</span> <span class="c1">// first time
+</span><span class="n">printf</span><span class="p">(</span><span class="s">"enter two numbers</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="n">sum</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"sum %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+
+<span class="n">printf</span> <span class="p">(</span><span class="s">"enter two numbers</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> <span class="c1">// second time
+</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="n">sum</span><span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"sum %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"enter two numbers</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> <span class="c1">//third time
+</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="n">sum</span><span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"sum %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>We wrote the same code for adding numbers for 3 times, but using function we can make our code smaller and easily readable.<br /></p>
+
+<h1 id="code">code</h1>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">void</span> <span class="nf">add</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">sum</span><span class="p">;</span> 
+<span class="n">printf</span><span class="p">(</span><span class="s">"enter two numbers</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="n">Sum</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"sum %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">add</span><span class="p">();</span>
+  <span class="n">add</span><span class="p">();</span>
+  <span class="n">add</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Now in the example  you can see that instead of writing a code snippet for 3 times we wrote it just once in function add() and just called it from main() 3 times.</li>
+  <li>This makes our code <strong>smaller</strong> and <strong>easier</strong> to understand.</li>
+</ul>
+
+<h3 id="ufunction-callu">1.5 <u>Function Call:</u></h3>
+
+<ol>
+  <li>In the previous example add(); is function call.</li>
+  <li>Function call should be made by ending Semicolon.</li>
+</ol>
+<p>### 1.6 <u> Passing parameters to Functions</u><br />
+ In above example we saw calling functions without passing any parameters, but if we want we can pass parameters to function while calling it.</p>
+
+<p>Example: Program to swap two numbers.<br /></p>
+
+<h1 id="code-1">code</h1>
+<p><br /></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>  <span class="kt">int</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="n">printf</span> <span class="p">(</span><span class="s">" values after swap  m = %d </span><span class="se">\n</span><span class="s"> and n = %d"</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">44</span><span class="p">;</span>
+    <span class="c1">// calling swap function by value
+</span>    <span class="n">printf</span> <span class="p">(</span><span class="s">" values before swap  m = %d </span><span class="se">\n</span><span class="s"> and n = %d"</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+    <span class="n">swap</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>                         
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>In above example main() is passing two variables m and n to swap (), swap() function contains two variables (a and b) where value of m and n is copied, here a and b are known as **function arguments**.</li>
+  <li>Swap (int a, int b) is an example of function with argument and without return value.</li>
+  <li>In above program it is not necessary to define user defined function i.e swap (int a, int b) first, if needed any function can be defined after main () function in following way.</li>
+</ul>
+
+<p>Example: Program to swap two numbers.<br />
+# code</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">void</span> <span class="n">swap</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span> <span class="c1">// define function’s prototype before main().
+</span><span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">44</span><span class="p">;</span>
+    <span class="c1">// calling swap function by value
+</span>    <span class="n">printf</span> <span class="p">(</span><span class="s">" values before swap m = %d </span><span class="se">\n</span><span class="s"> and n = %d"</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+    <span class="n">swap</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> 
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">swap</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span> 
+    <span class="kt">int</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="n">tmp</span><span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">" </span><span class="se">\n</span><span class="s"> values after swap m = %d</span><span class="se">\n</span><span class="s"> and n = %d"</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>This example shows how any main () can be defined before any other function by just defining the prototype of the function before main ().</li>
+  <li>While defining the prototype it is not necessary to write variable name as shown in the example, 
+i.e. void swap (int, int).</li>
+  <li>But while writing definition of function make sure to write arguments name as well, like void swap(int a, int b).</li>
+</ul>
+
+<h3 id="umethods-of-passing-parameters-to-functionsu">1.6.1 <u>Methods of passing parameters to functions:</u></h3>
+<ul>
+  <li>Pass by value</li>
+  <li>Pass by reference</li>
+  </ul>
+
+<h3 id="upass-by-valueu">1.6.1.1 <u>Pass by value:</u></h3>
+<p><br /></p>
+<ol>
+  <li>In pass by value we pass the parameters to the function, where the values of parameters is copied in arguments of the function.</li>
+  <li>Any change made on those arguments in that function will not be reflected in actual variables (i.e parameters).</li>
+<br />
+Example: Program to swap two numbers.
+# code
+
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span> 
+    <span class="kt">int</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+<span class="p">}</span> 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">44</span><span class="p">;</span>
+    <span class="c1">// calling swap function by value
+</span>    <span class="n">printf</span><span class="p">(</span><span class="s">" values before swap m = %d  and n = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+    <span class="n">swap</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>              
+   <span class="n">printf</span><span class="p">(</span><span class="s">"values after swapping m=%d and n=%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>           
+<span class="p">}</span></code></pre></figure>
+
+
+OUTPUT: values before swap m=22 and n=44
+             values after swapping m=22 and n=44 
+
+<ol>
+  <li>In previous example after swapping the values of m and n is still the same, their copies in function swap
+(i.e. a and b) were swapped.</li>
+  <li>This is because values of a and b were not reflected on variable m and n.</li>
+</ol>
+</ol>
+<p><br /></p>
+
+<h3 id="upass-by-referenceu">1.6.1.2 <u>Pass by reference:</u></h3>
+<ol>
+  <li>In pass by reference we pass the actual parameters address to the function.</li>
+  <li>This address of parameters get copied to the reference variable of the function.</li>
+  <li>Now any change made on those arguments will be reflected on 
+  actual parameters.</li>
+</ol>
+
+<p>Example:</p>
+
+<h1 id="code-2">code</h1>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span> 
+    <span class="kt">int</span> <span class="o">*</span><span class="n">tmp</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">tmp</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="o">*</span><span class="n">tmp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">44</span><span class="p">;</span>
+    <span class="c1">// calling swap function by value
+</span>    <span class="n">printf</span><span class="p">(</span><span class="s">" values before swap  m = %d  and n = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+    <span class="n">swap</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">m</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>              
+   <span class="n">printf</span><span class="p">(</span><span class="s">"values after swapping m=%d and n=%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>      <span class="p">}</span>     </code></pre></figure>
+
+<p><br />
+OUTPUT: values before swap m=22 and n=44
+             values after swapping m=44 and n=22</p>
+<ul>
+  <li>In this example we saw that the parameters were passed to functions where their address was copied.</li>
+  <li>Hence every change made on those arguments( a and b)
+were reflected in actual parameters (m and n) because
+all changes were done in address directly.</li>
+</ul>
+
+<h3 id="upassing-array-to-functionu">1.6.2.1 <u>Passing Array to Function:</u></h3>
+<ul>
+  <li>Arrays can also be passed to functions like any other variable.</li>
+  <li>To pass an array just write the name of the array while</li> calling the function as shown in following example.&lt;/li&gt;
+  <li>The function prototype should be like</li>
+return-type (data_type array_name[]).
+  <li>Example: To find sum 5 numbers by passing 1D array to function.</li>
+</ul>
+
+<h1 id="code-3">code</h1>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
+</span>
+  <span class="kt">int</span>  <span class="nf">sum</span><span class="p">(</span> <span class="kt">int</span> <span class="n">a</span><span class="p">[]</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="kt">int</span>  <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+    <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="n">main</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">values</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">i</span><span class="p">,</span> <span class="n">add</span><span class="p">;</span>
+    
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Enter 5 numbers</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+      <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">);</span>
+    
+    <span class="n">add</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span> <span class="n">values</span> <span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s"> Sum  is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">add</span> <span class="p">);</span>
+  <span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Same is for passing <strong>2-D</strong> array except  function prototype should be as follows:</li>
+  <li><strong>return-type (data_type array_name[][number_of_column).</strong></li>
+  <li>Example: To pass a <strong>2-D</strong> array to other function and display it.</li>
+</ul>
+<p><br />
+# code</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
+</span><span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="err"> </span>
+<span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[]</span>  <span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="kt">int</span> <span class="n">m</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="err">    </span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+<span class="err">    </span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="err">      </span><span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="err">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="err"> </span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="err">    </span><span class="kt">int</span> <span class="n">arr</span><span class="p">[][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span> <span class="p">};</span>
+<span class="err">    </span><span class="n">print</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="err">    </span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="upassing-a-string-to-functionu">1.6.2.2 <u>Passing a string to Function:</u></h3>
+
+<ul>
+  <li>Passing an array is like passing an array of characters.</li>
+  <li>We can implement it like we did for 1-D array.</li>
+  <li>Prototype of function should be </li>
+  <li>Example:</li>
+# code
+
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt; 
+#include&lt;string.h &gt;
+</span><span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">char</span> <span class="n">a</span><span class="p">[])</span> <span class="p">{</span>
+   <span class="n">printf</span><span class="p">(</span><span class="n">a</span><span class="p">);}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kt">char</span> <span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">"enter a string</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+   <span class="n">gets</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+   <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">;</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span> </code></pre></figure>
+
+</ul>
+
+<h3 id="ufunctions-returning-valuesu">1.7 <u>Functions returning values:</u></h3>
+<ul>
+  <li>Functions can return some value as well, and the type of the value returned by them depends on their return type.</li>
+  <li>Functions return value to the place from where they have been called.</li>
+</ul>
+
+<p>Example: Sum of two numbers.<br /></p>
+
+<h1 id="code-4">code</h1>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">int</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">sum</span><span class="p">;</span>
+  <span class="n">sum</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+ <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+ <span class="n">printf</span><span class="p">(</span><span class="s">"enter two integers</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+ <span class="n">scanf</span><span class="p">(</span><span class="s">"%d%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"sum is %d"</span><span class="p">,</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">));</span>
+<span class="p">}</span> </code></pre></figure>
+
+<p><br />
+Output: enter two integers
+               5 3
+               sum is 8
+<br />
+NOTE: In above program we called function func() from printf()  and the value returned by func() (i.e. 8) was displayed as result. 
+<br /></p>
+
+<h3 id="urecursive-functionsu">1.8 <u>Recursive Functions:</u></h3>
+<ul>
+  <li>Sometimes you can call a function using that same function, these functions are known as recursive functions.</li>
+  <li>Recursive function can make a program short, but implementing recursive function may be difficult.</li>
+  <li>Every time function will return some value that value will go to the place from where it was called, just like normal functions.</li>
+</ul>
+
+<p><br />
+Example:
+# code</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">int</span> <span class="nf">rec</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">rec</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+ <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+ <span class="n">printf</span><span class="p">(</span><span class="s">"enter a number</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+ <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+ <span class="n">printf</span><span class="p">(</span><span class="s">"sum of %d natural numbers : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">n</span><span class="p">,</span> <span class="n">rec</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Above code can be explained in steps i.e. every time it returned some value, suppose n was initially 4.</p>
+
+<ol>
+  <li>a=4</li>
+  a=4+rec(3)
+  <li>a=3</li>
+a=3+rec(2)
+  <li>a=2</li>
+a=2+rec(1)
+  <li>a=1</li>
+return 1  // since if condition a==1 is true.
+  <li>Now this returned value will go from where it was called i.e. to third step and from there it will go to second and so on.</li>
+  <li>So the value of ‘a’ in third step will be 2+1=3.</li>
+  <li>And the value of second ‘a’ will be 3+3=6.</li>
+  <li>Similarly the end result would be 10.</li>
+  <li>This will be sent to main() function by ‘return a’.&lt;/li/ol&gt;
+Similarly recursive functions can be used to write other codes as well like Fibonacci series, binary trees etc.
+
+
+
+</li></ol>
+
+      </article>
+
+      <nav class="pagination">
+        
+          <a class="pagination-previous" href="/File-Management.html">
+            <em>&larr; Previous</em>
+            <strong>File Management</strong>
+          </a>
+        
+
+        
+      </nav>
+    </div>
+  </div>
+</main>
+
+<a id="top" class="elevator">
+  <i class="fa fa-angle-up"></i>
+  <span>Back to top</span>
+</a>
+ <p style="
+    font-size: 11px;
+    color: black;
+    text-align: center;
+">CodeHub Application don't have any responsibility/authority on this page Contnet. it is uploaded by anonymous contributors, If you think it is voiliting any of T&amp;C please issue a <a href="#" style="
+    text-decoration: underline;
+    color: black;
+">Take Down Request here</a></p>
+    </div>
+    
+      <div id="overlay" class="page-overlay"></div>
+      <div class="page-menu">
+        <section class="toc-component">
+  <div class="container">
+    <article class="toc-section toc-section--web">
+      <div class="toc-heading">
+        <i class="fa fa-globe"></i>
+        <h3>
+          <a href="">Pintors</a>
+        </h3>
+       
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Pointers.html">
+                  <em>05</em>
+                  Pointers
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--html5">
+      <div class="toc-heading">
+        <i class="fa fa-html5"></i>
+        <h3>
+          <a href="">Structures</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Strctures.html">
+                  <em>03</em>
+                  Structures
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Flow Control</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Flow_Control.html">
+                  <em>04</em>
+                  Flow Control
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="css-basics.html">Arrays</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Arrays.html">
+                  <em>03</em>
+                  Arrays
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Functions</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Functions.html">
+                  <em>01</em>
+                  Funcitons
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Functions.html">
+                  <em>03</em>
+                  Funcitons
+                </a>
+              </li>
+              
+            
+          
+        
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">File Management</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/File-Management.html">
+                  <em>02</em>
+                  File Management
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+  </div>
+</section>
+
+      </div>
+      <div id="close" class="page-close">
+        <a class="page-close-button">
+          Close
+        </a>
+      </div>
+    
+    <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/codemirror.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/mode/xml/xml.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/mode/htmlmixed/htmlmixed.js"></script>
+
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/marksheet.js"></script>
+
+
+  <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/affix.js"></script>
+  <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/post.js"></script>
+
+
+<script async type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Source+Sans+Pro:400,300,700,400italic,700italic:latin', 'Source+Code+Pro::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+ <script>
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('https://codehubplatform.github.io/EnglishWebContent/sw.js').then(function(reg) {
+	    if (!reg.installing) return;
+	    console.log("[*] ServiceWorker is installing...");
+
+	    var worker = reg.installing;
+	    worker.addEventListener('statechange', function() {
+	        if (worker.state == 'redundant') {
+	            console.log('[*] Install failed');
+	        }
+	        if (worker.state == 'installed') {
+	            console.log('[*] Install successful!');
+	        }
+	    });
+	});
+}
+
+</script>
+    
+  </body>
+</html>

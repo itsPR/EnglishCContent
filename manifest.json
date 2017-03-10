@@ -1,0 +1,19 @@
+{
+  "short_name": "CodeHub",
+  "name": "CodeHub",
+  "icons": [
+    {
+      "src": "ic_launcher.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "ic_launcher144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/EnglishWebContent//index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}

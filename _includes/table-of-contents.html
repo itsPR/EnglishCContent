@@ -1,0 +1,204 @@
+<section class="toc-component">
+  <div class="container">
+    <article class="toc-section toc-section--web">
+      <div class="toc-heading">
+        <i class="fa fa-globe"></i>
+        <h3>
+          <a href="">Pintors</a>
+        </h3>
+       
+        
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "pointers" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--html5">
+      <div class="toc-heading">
+        <i class="fa fa-html5"></i>
+        <h3>
+          <a href="">Structures</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "structures" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="https://codehubplatform.github.io/EnglishWebContent/{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Flow Control</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "flow" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="css-basics.html">Arrays</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "arrays" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Functions</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "functions" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">File Management</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        {% for post in site.posts reversed %}
+          {% capture currentsection %}{{ post.section }}{% endcapture %}
+          {% if currentsection == "files" %}
+            {% capture currentmonth %}{{ post.date | date: "%m" }}{% endcapture %}
+            {% if currentmonth != month %}
+              <li class="toc-month">
+                <a href="{{ post.url }}">
+                  <em>{{currentmonth}}</em>
+                  {{ post.title | strip_html }}
+                </a>
+              </li>
+              {% capture month %}{{currentmonth}}{% endcapture %}
+            {% else %}
+              <li>
+                <a href="{{ post.url }}" {%if page.url == post.url %} class="active"{% endif %}>
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </article>
+  </div>
+</section>

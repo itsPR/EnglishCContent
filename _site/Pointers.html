@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html class="route- route-post section-pointers">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Pointers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codehubplatform.github.io/EnglishWebContent/">
+  <meta property="og:title" content="CodeHub">
+  <meta property="og:description" content="CodeHub - is the best way to browse and learn development">
+  <meta property="og:site_name" content="CodeHub">
+  <meta property="og:image" content="https://codehubplatform.github.io/EnglishWebContent/images/marksheet-facebook.png">
+  <meta property="fb:app_id" content="470761896424893">
+  <link rel="manifest" href="/EnglishWebContent/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://codehubplatform.github.io/EnglishWebContent/css/main.css">
+  <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="/css/ie.css" />
+  <![endif]-->
+</head>
+
+  <body>
+    
+
+    <div class="page-hero"></div>
+    <div class="page-body">
+
+      <main class="page-container">
+  <section class="heading">
+    <div class="container">
+      <h1>
+        <em>5.3</em>
+        Pointers
+      </h1>
+      <h2></h2>
+      
+    </div>
+  </section>
+
+  <div class="page-content">
+    <div class="container">
+      
+
+
+      <article class="content">
+        <h3 id="introduction">1.1 Introduction:</h3>
+
+<h2 id="why-do-we-need-pointers-what-is-its-application">Why do we need pointers? What is its application?</h2>
+
+<p>Consider that you wish to go to a place and you do not know where that place is. Assume that there are only sign boards to help you.</p>
+
+<p><strong>Pointers are like sign boards</strong> which show where the values inside a particular address is present.</p>
+
+<h3 id="pointers">1.2 Pointers:</h3>
+
+<ul>
+  <li>allow us to access a variable that is defined outside the function (you’ve already studied what functions are)</li>
+  <li>can be used to pass information back and forth between a function and its reference point.</li>
+  <li>easy to handle data tables (tabular data)</li>
+  <li>Reduce the length and complexity of a program</li>
+  <li>Increase the execution speed (How? We’ll analyze in the later part)</li>
+</ul>
+
+<p><strong>Pointer - Definition</strong></p>
+
+<p>A pointer is a variable that stores the address of another variable (A variable is a location in memory.)</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="o">**</span><span class="n">Ex</span><span class="o">:**</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+       <span class="n">Int</span> <span class="o">*</span><span class="n">y</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span></code></pre></figure>
+
+<p>In the above example x is a variable and y is a pointer.</p>
+
+<h3 id="the--and--operators">1.3 The &amp; and * Operators</h3>
+
+<p>Consider the declaration:
+int x = 4;</p>
+
+<p>This declaration tells the C compiler to:
+a.Reserve space in memory to hold the integer value
+b.Associate the name i with this memory location
+c.Store the value 3 at this location</p>
+
+<p><strong>i -&gt; location name</strong>
+<strong>3 -&gt;value at the location</strong>
+<strong>5748 -&gt; Store the value 3 at this location.</strong></p>
+
+<p><strong>Note: Address need not be always 5748. It can be any integral value.</strong></p>
+
+<p>Let us consider a program:</p>
+
+<p>#code</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include&lt;stdio.h&gt;
+</span><span class="kt">void</span> <span class="n">main</span><span class="p">(){</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="n">printf</span><span class="p">(</span><span class="err">“\</span><span class="n">nAddress</span> <span class="n">of</span> <span class="n">i</span> <span class="o">=</span> <span class="o">%</span><span class="n">u</span><span class="err">”</span><span class="p">,</span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="err">“\</span><span class="n">nValue</span> <span class="n">of</span> <span class="n">i</span> <span class="o">=</span> <span class="o">%</span><span class="n">u</span> <span class="err">”</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="err">“\</span><span class="n">nValue</span> <span class="n">of</span> <span class="n">i</span> <span class="o">=</span> <span class="o">%</span><span class="n">d</span><span class="err">”</span><span class="p">,</span><span class="o">*</span><span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">))</span></code></pre></figure>
+
+<p><strong>Output</strong>
+* Address of i = 5748
+* Value of i = 3
+* Value of i = 3
+<strong>Note :-There is a difference between &amp;i and i in the printf() statement.</strong>
+* The * operator or the pointer operator also called as ‘value at address’ operator, returns the value stored at a particular address.
+* * is also called indirection operator
+###  1.4 More about variables and pointers
+Consider the statement 
+int xyz = 50;</p>
+
+<p>This statement instructs the compiler to allocate a location for the integer variable xyz, and put the value 50 in that location.</p>
+
+<p>Suppose that the address location chosen is 1380.
+xyz -&gt; variable
+50 -&gt; value
+1380 -&gt; address
+<strong>The following points are noteworthy:</strong>
+* During execution of the program, the system always associates the name xyz with the address 1380.
+* The value 50 can be accessed by using either the name xyz or the address 1380.
+* Since memory addresses are simply numbers, they can be assigned to some variables which can be stored in memory.
+* Such variables that hold memory addresses are called <strong>pointers</strong>.
+* Since a pointer is a variable, its value is also stored in some memory location.</p>
+
+<p>Suppose we assign the address of xyz to a variable p, p is said to point to the variable xyz.
+<strong>p = &amp;xyz;</strong>
+<strong>variable</strong>        <strong>value</strong>          <strong>address</strong>
+xyz                   50                 1380
+p                     1380               2525</p>
+
+<h3 id="address-vs-values">1.5 Address vs Values</h3>
+
+<p>image to be added</p>
+
+<p><strong>Note:-</strong>
+* Each memory cell has an address associated with it.
+* Each cell also stores some value.
+* Don’t get confused - the address referring to a memory location and the value stored in that location mean different.</p>
+
+<p>image to added</p>
+
+<ul>
+  <li>Here x is the variable name whose address is 1024 and stores the value 32 in it.
+**Note:-</li>
+  <li>A pointer is just a C variable whose value is the address of another variable!</li>
+  <li>After declaring a pointer: int *ptr;</li>
+  <li>ptr doesn’t actually point to anything yet.</li>
+  <li>We can either:
+      1. make it point to something that already exists, or
+      2. allocate room in memory for something new that it will point to… (next time).</li>
+  <li>The next diagrammatic representation should make it very clear about basics of a pointer:</li>
+</ul>
+
+<p>image to be added</p>
+
+<p><strong>Note:- 
+* Declaring a pointer just allocates space to hold the pointer - it does not allocate something to be pointed to!
+* Local variables in C are not always initialized, they may contain anything.</strong></p>
+
+<p><strong>Example</strong>
+image to be added</p>
+
+<h3 id="accessing-the-address-of-a-variable">1.6 Accessing the address of a variable</h3>
+<p>The address of a variable can be determined using the ‘&amp;’ operator. The operator ‘&amp;’ immediately preceding a variable returns the address of the variable.
+<strong>Example</strong>
+p = &amp;xyz;
+The address of xyz (1380) is assigned to p.</p>
+
+<p>The ‘&amp;’ operator can be used only with a simple variable or an array element.
+&amp;distance 
+&amp;x[0]
+&amp;x[i-2]
+<strong>Note:-
+The following usage of pointers is illegal
+* &amp;235 - Pointing at constant
+* int arr[20]; &amp;arr; - Pointing at array name.
+* &amp;(a+b) - Pointing at expressions.</strong></p>
+
+<p>**Lets look at a sample programming example:-</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                <span class="cp">#include &lt;stdio.h&gt;
+</span>                <span class="n">main</span><span class="p">()</span>
+                <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+                <span class="kt">float</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+                <span class="kt">double</span> <span class="n">d</span><span class="p">;</span>
+                <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">;</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">12</span><span class="p">.</span><span class="mi">36</span><span class="p">;</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">.</span><span class="mi">66</span><span class="p">;</span> <span class="n">ch</span> <span class="o">=</span> <span class="err">‘</span><span class="n">A</span><span class="err">’</span><span class="p">;</span>
+                <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">f</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">f</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">ld</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">c</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">l</span>
+                <span class="p">}</span></code></pre></figure>
+
+<p><strong>Sample Output:</strong>
+10 is stored in location 3221224908
+2.500000 is stored in location 3221224904
+12.360000 is stored in location 3221224900
+12345.660000 is stored in location 3221224892
+A is stored in location 3221224891</p>
+
+<h2 id="pointer-declaration">1.7 Pointer Declaration</h2>
+<p>Pointer variales must be declared before we use them.
+<strong>General form:
+data_type <em>pointer_name;
+Three things are specified in te above declaration:**
+* The asterisk (</em>) tells that the variable pointer_name is a pointer variable.
+* pointer_name needs a memory location.
+* pointer_name points to a variable of type data_type.
+**Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 <span class="kt">int</span> <span class="o">*</span><span class="n">count</span><span class="p">;</span>
+                 <span class="kt">float</span> <span class="o">*</span><span class="n">speed</span><span class="p">;</span>
+                 <span class="n">Once</span> <span class="n">a</span> <span class="n">pointer</span> <span class="n">variable</span> <span class="n">has</span> <span class="n">been</span> <span class="n">declared</span><span class="p">,</span> <span class="n">it</span> <span class="n">can</span> <span class="n">be</span> <span class="n">made</span> <span class="n">to</span> <span class="n">point</span> <span class="n">to</span> <span class="n">a</span> <span class="n">variable</span> <span class="n">using</span> <span class="n">an</span> <span class="n">assignment</span> <span class="n">statement</span> <span class="n">like</span><span class="o">:</span>
+                 <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">xyz</span><span class="p">;</span>
+                 <span class="o">:</span>
+                 <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">xyz</span><span class="p">;</span></code></pre></figure>
+
+<p>This is called <strong>pointer initialization</strong></p>
+
+<p><strong>Important Points to remember</strong></p>
+<italics>Pointer variables must always point to a data item of the same type. Have a look at the representation given below.</italics>
+
+<p>image to be added</p>
+
+<p>Assigning an absolute address to a pointer variable is prohibited.
+int <em>count;
+:
+count = 1268; /</em> This is invalid */</p>
+
+<h3 id="accessing-a-variable-through-its-pointer">1.8 Accessing a variable through its pointer</h3>
+<p>Once a pointer has been assigned the address of a variable, the value of the variable can be accessed using the indirection operator (*).</p>
+
+<p>image to be added</p>
+
+<p><strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">               <span class="cp">#include &lt;stdio.h&gt;
+</span>               <span class="n">main</span><span class="p">()</span>
+               <span class="p">{</span>
+               <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+               <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+               <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+               <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="p">;</span>
+               <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">;</span>
+               <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="p">;</span>
+               <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="n">a</span><span class="o">=%</span><span class="n">d</span> <span class="n">b</span><span class="o">=%</span><span class="n">d</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+               <span class="p">}</span></code></pre></figure>
+
+<p><strong>The highlighted statements are in the program are equivalent</strong></p>
+
+<p><strong>Output</strong>
+a = 40 b = 40</p>
+
+<p><strong>Programming Example 2</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
+</span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> <span class="p">;</span>
+<span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span> <span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="o">*</span><span class="n">ptr</span> <span class="p">;</span>
+<span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="o">*&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">&amp;*</span><span class="n">ptr</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">u</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ptr</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">location</span> <span class="o">%</span><span class="n">u</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span> <span class="p">;</span>
+<span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+<span class="n">printf</span> <span class="p">(</span><span class="err">“\</span><span class="n">nNow</span> <span class="n">x</span> <span class="o">=</span> <span class="o">%</span><span class="n">d</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Assumptions</strong>
+* <strong>Address of x:</strong> 3221224908
+* <strong>Address of y:</strong> 3221224904
+* <strong>Address of ptr:</strong> 3221224900</p>
+
+<p><strong>Output</strong>
+10 is stored in location 3221224908
+10 is stored in location 3221224908
+10 is stored in location 3221224908
+10 is stored in location 3221224908
+3221224908 is stored in location 3221224900
+10 is stored in location 3221224904
+Now x = 25</p>
+
+<p><strong>Pointer Expressions</strong>
+Like other variables, pointer variables can be used in expressions. If p1 and p2 are two pointers, the following statements are valid:
+ <strong>sum = <em>p1 + p2;**
+ **prod = *p1 * *p2;**
+ **prod = (</em>p1) * (<em>p2);**
+ ** *p1 = *p1 + 2;**
+ **x = *p1/</em>p2 + 5;</strong></p>
+
+<h3 id="pointer-expressions-which-are-allowed-in-c">1.9 Pointer Expressions which are allowed in C:</h3>
+<ul>
+  <li><strong>Add an integer to a pointer.</strong></li>
+  <li><strong>Subtract an integer from a pointer.</strong></li>
+  <li><strong>Subtract one pointer from another (related).</strong>
+<strong>Note:-</strong></li>
+  <li>If p1 and p2 are both pointers to the same array, then p2–p1 gives the number of elements between p1 and p2.</li>
+</ul>
+
+<p><strong>Pointer Expressions which are not allowed in C</strong>
+* Addition of two pointers. 
+      1. p1 = p1 + p2;
+* Multiplying / dividing a pointer in an expression.
+      2. p1 = p2 / 5;
+      3. p1 = p1 - p2 * 10;</p>
+
+<h3 id="scale-factor">1.10 Scale Factor</h3>
+<p>We have seen that an integer variable can be added to or subtracted from a pointer variable.<br />
+Consider,</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                <span class="kt">int</span> <span class="o">*</span><span class="n">p1</span><span class="p">,</span> <span class="o">*</span><span class="n">p2</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+                <span class="o">:</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
+                <span class="n">p2</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span> <span class="err">–</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">);</span></code></pre></figure>
+
+<p>In reality, it is not the integer value which is added or subtracted, but rather the <strong>scale factor times the value.</strong></p>
+
+<p>image to be added</p>
+
+<p>If p1 is an integer pointer, then p1++ will increment the value of p1 by 4.</p>
+
+<p><strong>Note:-</strong>
+* The exact scale factor may vary from one machine to another.
+* The scale factor can be found out using the sizeof() function.
+* Syntax:</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                <span class="k">sizeof</span><span class="p">(</span><span class="n">data_type</span><span class="p">);</span></code></pre></figure>
+
+<p><strong>Programming Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 <span class="cp">#include &lt;stdio.h&gt;
+</span>                 <span class="n">main</span><span class="p">()</span>
+                 <span class="p">{</span> 
+                     <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="n">No</span><span class="p">.</span> <span class="n">of</span> <span class="n">bytes</span> <span class="n">occupied</span> <span class="n">by</span> <span class="kt">int</span> <span class="n">is</span> <span class="o">%</span><span class="n">d</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+                     <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="n">No</span><span class="p">.</span> <span class="n">of</span> <span class="n">bytes</span> <span class="n">occupied</span> <span class="n">by</span> <span class="kt">float</span> <span class="n">is</span> <span class="o">%</span><span class="n">d</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+                     <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="n">No</span><span class="p">.</span> <span class="n">of</span> <span class="n">bytes</span> <span class="n">occupied</span> <span class="n">by</span> <span class="kt">double</span> <span class="n">is</span> <span class="o">%</span><span class="n">d</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
+                     <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="n">No</span><span class="p">.</span> <span class="n">of</span> <span class="n">bytes</span> <span class="n">occupied</span> <span class="n">by</span> <span class="kt">char</span> <span class="n">is</span> <span class="o">%</span><span class="n">d</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">));</span>
+                 <span class="p">}</span> </code></pre></figure>
+
+<p><strong>Output</strong>
+Number of bytes occupied by int is 4
+Number of bytes occupied by float is 4
+Number of bytes occupied by double is 8
+Number of bytes occupied by char is 1</p>
+
+<h3 id="passing-pointers-as-parameters-for-a-functions">1.11 Passing pointers as parameters for a functions</h3>
+
+<p>The following points are note-worthy.
+* Pointers are often passed to a function as arguments.
+* <strong>Passing pointers allows data items within the calling program to be accessed by the function, altered, and then returned to the calling program in altered form (Call by reference or address or location).</strong>
+* Normally, arguments are passed to a function by <italics>value</italics>
+* The data items are occupied to the function.
+* Changes are not reflected i the calling program.</p>
+
+<p>** call by value - Example of swapping two numbers:**</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 <span class="cp">#include &lt;stdio.h&gt;
+</span>                 <span class="kt">void</span> <span class="nf">swap</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+                 <span class="p">{</span>
+                 <span class="kt">int</span> <span class="n">t</span><span class="p">;</span>
+                 <span class="n">t</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+                 <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+                 <span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+                 <span class="p">}</span>
+
+                 <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+                 <span class="p">{</span>
+                 <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+                 <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+                 <span class="n">swap</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+                 <span class="n">printf</span> <span class="p">(</span><span class="err">“\</span><span class="n">n</span> <span class="n">a</span><span class="o">=%</span><span class="n">d</span><span class="p">,</span> <span class="n">b</span><span class="o">=%</span><span class="n">d</span><span class="err">”</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+                 <span class="p">}</span></code></pre></figure>
+
+<p><strong>Output</strong>
+a=5 b=20</p>
+
+<p><strong>Call bt reference - Example of swapping two numbers:</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                <span class="cp">#include &lt;stdio.h&gt;
+</span>                <span class="kt">void</span> <span class="nf">swap</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">y</span><span class="p">)</span>
+                <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">t</span><span class="p">;</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="o">*</span><span class="n">x</span><span class="p">;</span>
+                <span class="o">*</span><span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="n">y</span><span class="p">;</span>
+                <span class="o">*</span><span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+                <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+                <span class="n">swap</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+                <span class="n">printf</span> <span class="p">(</span><span class="err">“\</span><span class="n">n</span> <span class="n">a</span><span class="o">=%</span><span class="n">d</span><span class="p">,</span> <span class="n">b</span><span class="o">=%</span><span class="n">d</span><span class="err">”</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+                <span class="p">}</span></code></pre></figure>
+
+<p><strong>Output</strong>
+a=20 b=5</p>
+
+<p><strong>Note:-Refer to Functions Chapter for the differences between call by value and call by reference</strong></p>
+
+<h3 id="pointers-and-arrays">1.2 Pointers and Arrays</h3>
+<p>When an array is declared:
+* The compiler allocates a base address and sufficient amount of storage to contain all the elements of the array in contiguous memory locations.
+* The <italics>base address</italics> is the location of the first element <italics>(index 0)</italics> of the array.
+* The compiler also defines the array name as a <italics>constant pointer</italics> to the first element. 
+<strong>Example</strong>
+Consider the declaration:
+int x[5] = {1, 2, 3, 4, 5};
+Suppose that the base address of x is 2500, and each integer requires 4 bytes.</p>
+
+<p>image to be added</p>
+
+<p>Both x and &amp;x[0] have the value 2500.</p>
+
+<p>p = x; and p = &amp;x[0]; are equivalent.</p>
+
+<p>We can access successive values of x by using p++ or p—to move from one element to another.</p>
+
+<p><strong>Relationship between p and x:</strong>
+p = &amp;x[0] = 2500
+p+1 = &amp;x[1] = 2504
+p+2 = &amp;x[2] = 2508
+p+3 = &amp;x[3] = 2512
+p+4 = &amp;x[4] = 2516</p>
+
+<p>** *(p+i) gives the value of x[i]</p>
+
+<p><strong>Programming Example - Function to find average</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 <span class="cp">#include &lt;stdio.h&gt;
+</span>
+                 <span class="kt">float</span> <span class="n">avg</span> <span class="p">(</span><span class="kt">int</span> <span class="n">array</span><span class="p">[],</span> <span class="n">size</span><span class="p">);</span>
+                 <span class="p">{</span>
+                 <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">i</span> <span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                 <span class="n">p</span> <span class="o">=</span> <span class="n">array</span><span class="p">;</span>
+                 <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                 <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">);</span>
+                 <span class="k">return</span> <span class="p">((</span><span class="kt">float</span><span class="p">)</span> <span class="n">sum</span> <span class="o">/</span> <span class="n">size</span><span class="p">);</span>
+                 <span class="p">}</span>
+
+                 <span class="kt">void</span> <span class="n">main</span><span class="p">()</span>
+                 <span class="p">{</span>
+                 <span class="kt">int</span> <span class="n">x</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
+                 <span class="n">scanf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span><span class="err">”</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+                 <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">k</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+                 <span class="n">scanf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span><span class="err">”</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">]);</span>
+                 <span class="n">printf</span> <span class="p">(</span><span class="err">“\</span><span class="n">nAverage</span> <span class="n">is</span> <span class="o">%</span><span class="n">f</span><span class="err">”</span><span class="p">,</span> <span class="n">avg</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">));</span>
+                 <span class="p">}</span></code></pre></figure>
+
+<p><strong>Points to be noted:</strong>
+An array name is an address can be subscripted.
+     * Pointers as well as arrays can be subscripted.
+     * A pointer variable can take different addresses as values.
+     * An array name is an address, or pointer, that is fixed.
+     * It is a <italics>**CONSTANT**</italics> pointer to the first element.
+<strong>Consequences:</strong>
+     * ar is a pointer.
+     * ar[0] is the same as *ar.
+     * ar[2] is the same as *(ar+2).
+     * We can use pointer arithmetic to access arrays more conveiently.</p>
+<italics>**Declared arrays are only allocated while the scope is valid**</italics>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                <span class="kt">char</span> <span class="o">*</span><span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+                <span class="kt">char</span> <span class="n">string</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span> <span class="p">...;</span>
+                <span class="k">return</span> <span class="n">string</span><span class="p">;</span>
+                <span class="p">}</span></code></pre></figure>
+
+<p><strong>is incorrect</strong>
+Array size n; want to access from 0 to n-1, so you should use counter AND utilize a constant for declaration &amp; incr</p>
+
+<p><strong>Wrong (Not an error!!)</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">ar</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+                 <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="p">...</span> <span class="p">}</span></code></pre></figure>
+
+<p><strong>Right</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                <span class="cp">#define ARRAY_SIZE 10
+</span>                <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">];</span>
+                <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ARRAY_SIZE</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="p">...</span> <span class="p">}</span></code></pre></figure>
+
+<p><strong>Why?</strong></p>
+<italics>You’re utilizing indirection and avoiding maintaining two copies of the number 10</italics>
+<p><strong>Points to note:</strong>
+* An array in C does not know its own length, &amp; bounds not checked!
+* We can accidentally access off the end of an array.
+* We must pass the array and its size to a procedure which is going to traverse it.
+* Segmentation faults and bus errors (These are very difficult to find)</p>
+
+<p>An array parameter can be declared as an array or a pointer; an array argument can be passed as a pointer.</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 <span class="kt">int</span> <span class="nf">strlen</span><span class="p">(</span><span class="kt">char</span> <span class="n">s</span><span class="p">[])</span>
+                 <span class="p">{</span>
+                 <span class="p">}</span>
+                 <span class="kt">int</span> <span class="nf">strlen</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span>
+                 <span class="p">{</span>
+                 <span class="p">}</span></code></pre></figure>
+
+<p><strong>Note:-</strong>
+int a[20], i, *p;
+     * The expression a[i] is equivalent to *(a+i)
+     * p[i] is equivalent to *(p+i)
+     * When an array is declared the compiler allocates a sufficient amount of contiguous space in memory. The base address of the array is the address of a[0].
+     * Suppose the system assigns 300 as the base address of a. a[0], a[1], …,a[19] are allocated 300, 304, …, 376.</p>
+
+<p><strong>Consider</strong>
+#define N 20
+int a[2N], i, *p, sum;
+         * p = a; is equivalent to p = *(a+0);
+         * p is assigned 300.
+         * Pointer arithmetic provides an alternative to array indexing.
+         * p=a+1; is equivalent to p=&amp;a[1]; (p is assigned 304)</p>
+
+<italics>for (p=a; p&lt;&amp;a[N]; ++p)</italics>
+<italics>sum += *p ;</italics>
+
+<italics>p=a;</italics>
+<italics>for (i=0; i&lt;N; ++i)</italics>
+<italics>sum += p[i] ;</italics>
+
+<italics>for (i=0; i&lt;N; ++i)</italics>
+<italics>sum += *(a+i) ;</italics>
+
+<p><strong>All the above information are equivalent</strong></p>
+
+<p><strong>Note:-</strong>
+* int a[N];
+        * a is a constant pointer.
+* a=p; ++a; a+=2 is illegal</p>
+
+<h3 id="pointer-arithmetic-and-element-size">1.13 Pointer Arithmetic and element size</h3>
+<p><em>*double *p, *q;**
+The expression p+1 yields the correct machine address for the next variable of that type.
+Other valid pointer expressions:
+* p+i
+* ++p
+* p+=i
+* p-q /</em> No of array elements between p and q */</p>
+
+<p><strong>Note:-</strong></p>
+
+<ul>
+  <li>Since a pointer is just a mem address, we can add to it to traverse an array.</li>
+  <li>p+1 returns a ptr to the next array element.</li>
+</ul>
+
+<p>image to be added</p>
+
+<p><strong>Note:-</strong>
+* C takes care of it: In reality, p+1 doesn’t add 1 to the memory address, it adds the size of the array element.
+* We can use pointer arithmetic to “walk” through memory:
+* C automatically adjusts the pointer by the right amount each time  i.e., 1 byte for a char, 4 bytes for an int, etc.)</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 <span class="kt">void</span> <span class="nf">copy</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">from</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">to</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+                 <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="o">*</span><span class="n">to</span><span class="o">++</span> <span class="o">=</span> <span class="o">*</span><span class="n">from</span><span class="o">++</span><span class="p">;</span>
+                 <span class="p">}</span>
+                 <span class="p">}</span></code></pre></figure>
+
+<p><strong>Important note</strong>
+C knows the size of the thing a pointer points to – every addition or subtraction moves that many bytes.
+<strong>So the following are equivalent:</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">               <span class="kt">int</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">array</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+               <span class="p">{</span>
+               <span class="k">return</span> <span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
+               <span class="cm">/* OR*/</span>
+               <span class="k">return</span> <span class="o">*</span><span class="p">(</span><span class="n">array</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span>
+               <span class="p">}</span></code></pre></figure>
+
+<p>**Array size n; want to access from 0 to n-1 test for exit by comparing to address one element past the array</p>
+
+<p>int ar[10], <em>p, *q, sum = 0;
+…
+p = ar; q = &amp;(ar[10]);
+while (p != q)
+/</em> sum = sum + *p; p = p + 1; */
+sum += *p++;</p>
+
+<p>Is this legal?**
+C defines that one element past end of array must be a valid address, i.e., not cause an bus error or address error</p>
+
+<h3 id="pointers-and-structures">1.14 Pointers and Structures</h3>
+<p><strong>(Please go revise Structures (Previous chapter) before you come to this lesson)</strong></p>
+
+<ul>
+  <li>You may recall that the name of an array stands for the address of its 0th element.</li>
+  <li>This is also true for the names of arrays of structure variables.</li>
+</ul>
+
+<p><strong>Consider the declaration</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                  <span class="k">struct</span> <span class="n">stud</span> <span class="p">{</span>
+                  <span class="kt">int</span> <span class="n">roll</span><span class="p">;</span>
+                  <span class="kt">char</span> <span class="n">dept_code</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span>
+                  <span class="kt">float</span> <span class="n">cgpa</span><span class="p">;</span>
+                  <span class="p">}</span> <span class="n">class</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="o">*</span><span class="n">ptr</span> <span class="p">;</span></code></pre></figure>
+
+<p><strong>Note:-</strong>
+* The name class represents the address of the 0th element of the structure array. 
+* ptr is a pointer to data objects of the type struct stud.
+* The assignment ptr = class; will assign the address of class[0] to ptr. 
+* When the pointer ptr is incremented by one (ptr++) :
+               * The value of ptr is actually increased by sizeof(stud).
+               * It is made to point to the next record.
+<strong>Once ptr points to a structure variable, the members can be accessed as:</strong>
+ptr –&gt; roll;
+ptr –&gt; dept_code;
+ptr –&gt; cgpa;
+<strong>The symbol “–&gt;” is called the arrow operator.</strong></p>
+
+<p><strong>Very Important points</strong>
+         * When using structure pointers, we should take care of operator precedence.
+         * Member operator “.” has higher precedence than “<em>”.
+         * ptr –&gt; roll and (</em>ptr).roll mean the same thing.
+         * *ptr.roll will lead to error.
+         * The operator “–&gt;” enjoys the highest priority among operators.
+         * ++ptr –&gt; roll will increment roll, not ptr.
+         * (++ptr) –&gt; roll will do the intended thing.</p>
+
+<ul>
+  <li>Structure is a group of data members irrespective of their type.</li>
+  <li>Using structure you can relate one variable of one type to other.</li>
+  <li>Different types of variables can stored under one name, so if you want to store information like name, address , phone number you can use structures and can store all this for different persons.</li>
+</ul>
+
+<p><strong>Syntax:</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                <span class="k">struct</span> <span class="n">tag</span> <span class="p">{</span>
+               <span class="n">type</span> <span class="n">member</span> <span class="mi">1</span><span class="p">;</span>     
+               <span class="n">type</span> <span class="n">member</span> <span class="mi">2</span><span class="p">;</span>          
+                    <span class="o">:</span>
+                    <span class="o">:</span>             
+               <span class="n">type</span> <span class="n">member</span> <span class="n">m</span><span class="p">;</span>
+                    <span class="p">};</span>  </code></pre></figure>
+
+<p>struct tag t1;</p>
+
+<ul>
+  <li>
+    <p>struct is a keyword, so write it as it is.</p>
+  </li>
+  <li>
+    <p>tag can be replaced by any name you want structure to have.</p>
+  </li>
+  <li>
+    <p>member 1, member 2 are data members which can be of same or different data type.</p>
+  </li>
+  <li>
+    <p>Data members include pointers, arrays as well.</p>
+  </li>
+  <li>
+    <p>t1 here is structure variable.</p>
+  </li>
+  <li>
+    <p>struct tag is new data type of t1.</p>
+  </li>
+</ul>
+
+<p>We can define structure variable in following way</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                     
+
+ <span class="k">struct</span> <span class="n">tag</span> <span class="p">{</span>
+                 <span class="n">member</span> <span class="mi">1</span><span class="p">;</span>     
+                 <span class="n">member</span> <span class="mi">2</span><span class="p">;</span>          
+                    <span class="o">:</span>         
+                 <span class="n">member</span> <span class="n">m</span><span class="p">;</span>
+                        <span class="p">}</span><span class="n">t1</span><span class="p">;</span>  </code></pre></figure>
+
+
+      </article>
+
+      <nav class="pagination">
+        
+
+        
+          <a class="pagination-next" href="/Strctures.html">
+            <em>Next &rarr;</em>
+            <strong>Structures</strong>
+          </a>
+        
+      </nav>
+    </div>
+  </div>
+</main>
+
+<a id="top" class="elevator">
+  <i class="fa fa-angle-up"></i>
+  <span>Back to top</span>
+</a>
+ <p style="
+    font-size: 11px;
+    color: black;
+    text-align: center;
+">CodeHub Application don't have any responsibility/authority on this page Contnet. it is uploaded by anonymous contributors, If you think it is voiliting any of T&amp;C please issue a <a href="#" style="
+    text-decoration: underline;
+    color: black;
+">Take Down Request here</a></p>
+    </div>
+    
+      <div id="overlay" class="page-overlay"></div>
+      <div class="page-menu">
+        <section class="toc-component">
+  <div class="container">
+    <article class="toc-section toc-section--web">
+      <div class="toc-heading">
+        <i class="fa fa-globe"></i>
+        <h3>
+          <a href="">Pintors</a>
+        </h3>
+       
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Pointers.html">
+                  <em>05</em>
+                  Pointers
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--html5">
+      <div class="toc-heading">
+        <i class="fa fa-html5"></i>
+        <h3>
+          <a href="">Structures</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Strctures.html">
+                  <em>03</em>
+                  Structures
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Flow Control</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Flow_Control.html">
+                  <em>04</em>
+                  Flow Control
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="css-basics.html">Arrays</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Arrays.html">
+                  <em>03</em>
+                  Arrays
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Functions</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Functions.html">
+                  <em>01</em>
+                  Funcitons
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Functions.html">
+                  <em>03</em>
+                  Funcitons
+                </a>
+              </li>
+              
+            
+          
+        
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">File Management</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/File-Management.html">
+                  <em>02</em>
+                  File Management
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+  </div>
+</section>
+
+      </div>
+      <div id="close" class="page-close">
+        <a class="page-close-button">
+          Close
+        </a>
+      </div>
+    
+    <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/codemirror.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/mode/xml/xml.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/mode/htmlmixed/htmlmixed.js"></script>
+
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/marksheet.js"></script>
+
+
+  <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/affix.js"></script>
+  <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/post.js"></script>
+
+
+<script async type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Source+Sans+Pro:400,300,700,400italic,700italic:latin', 'Source+Code+Pro::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+ <script>
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('https://codehubplatform.github.io/EnglishWebContent/sw.js').then(function(reg) {
+	    if (!reg.installing) return;
+	    console.log("[*] ServiceWorker is installing...");
+
+	    var worker = reg.installing;
+	    worker.addEventListener('statechange', function() {
+	        if (worker.state == 'redundant') {
+	            console.log('[*] Install failed');
+	        }
+	        if (worker.state == 'installed') {
+	            console.log('[*] Install successful!');
+	        }
+	    });
+	});
+}
+
+</script>
+    
+  </body>
+</html>

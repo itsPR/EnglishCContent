@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html class="route- route-post section-files">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>File Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codehubplatform.github.io/EnglishWebContent/">
+  <meta property="og:title" content="CodeHub">
+  <meta property="og:description" content="CodeHub - is the best way to browse and learn development">
+  <meta property="og:site_name" content="CodeHub">
+  <meta property="og:image" content="https://codehubplatform.github.io/EnglishWebContent/images/marksheet-facebook.png">
+  <meta property="fb:app_id" content="470761896424893">
+  <link rel="manifest" href="/EnglishWebContent/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://codehubplatform.github.io/EnglishWebContent/css/main.css">
+  <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="/css/ie.css" />
+  <![endif]-->
+</head>
+
+  <body>
+    
+
+    <div class="page-hero"></div>
+    <div class="page-body">
+
+      <main class="page-container">
+  <section class="heading">
+    <div class="container">
+      <h1>
+        <em>2.5</em>
+        File Management
+      </h1>
+      <h2></h2>
+      
+    </div>
+  </section>
+
+  <div class="page-content">
+    <div class="container">
+      
+
+
+      <article class="content">
+        <h3 id="file">File:</h3>
+
+<p>A file is a named collection of data stored in any secondary storage (hard disks, pendrives etc.)</p>
+
+<h3 id="need-for-file-system-management-in-c">1.1 Need for file system management in C</h3>
+
+<p>Suppose we want to save the results of our program for later use we can create a file and save the result in that file for later retrieval.
+Data management can also be done in C with the help of File Managements. We can save data in the form of structures (<em>user defined data types</em>).</p>
+
+<h3 id="operations-done-on-files">1.2 Operations done on files:</h3>
+
+<ul>
+  <li>Open</li>
+  <li>Read</li>
+  <li>Write</li>
+  <li>Close</li>
+</ul>
+
+<p>Files are stored as a sequence of bits. These files end with a End-of-File (EOF) character (1 byte size). This EOF can be used to detect the end of file while programming.</p>
+
+<h3 id="two-ways-of-processing-a-file">1.3 Two ways of processing a file:</h3>
+
+<ul>
+  <li>Text: Contains <code class="highlighter-rouge">ASCII</code> codes.</li>
+  <li>Binary: Can contain non-ASCII characters. Ex; Image, audio, video etc.</li>
+</ul>
+
+<h3 id="commands-and-keywords">1.4 Commands And Keywords:</h3>
+
+<p>We use file in the form of pointers in C. On defining a file pointer it always points to the first byte.
+* <code class="highlighter-rouge">FILE *</code> is used to define a file pointer.
+* <code class="highlighter-rouge">fopen()</code> is used to link a file to the file pointer. fopen() returns NULL if it is unable to open the file. Given below is a basic file program:</p>
+
+<p><strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">filename</span><span class="p">[]</span><span class="o">=</span> <span class="s">"file2.dat"</span><span class="p">;</span> 
+<span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span> <span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s">"w"</span><span class="p">);</span> 
+<span class="k">if</span> <span class="p">(</span><span class="n">fptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>  
+<span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="n">ERROR</span> <span class="n">IN</span> <span class="kt">FILE</span> <span class="n">CREATION</span><span class="err">”</span><span class="p">);</span>   
+ <span class="cm">/* DO SOMETHING */</span> 
+<span class="p">}</span>   </code></pre></figure>
+
+<h3 id="file-modes">1.5 File Modes:</h3>
+<p>A file can be opened in 3 modes (this input is given as the second argument in fopen() ):
+* <code class="highlighter-rouge">“w”:</code> File opened in write mode.
+* <code class="highlighter-rouge">“r”:</code> File opened in read mode.
+* <code class="highlighter-rouge">“a”:</code> File opened in append mode i.e. all changes are added to the end of file.
+To open binary files we use: <code class="highlighter-rouge">“wb”</code>, <code class="highlighter-rouge">“rb”</code>. <code class="highlighter-rouge">“ab”</code>.</p>
+
+<p>1.6 Exiting if fopen() fails:</p>
+
+<p><strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span> 
+<span class="kt">char</span> <span class="n">filename</span><span class="p">[]</span><span class="o">=</span> <span class="s">"file2.dat"</span><span class="p">;</span>  
+<span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span> <span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s">"w"</span><span class="p">);</span> 
+<span class="k">if</span> <span class="p">(</span><span class="n">fptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>     
+<span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="n">ERROR</span> <span class="n">IN</span> <span class="kt">FILE</span> <span class="n">CREATION</span><span class="err">”</span><span class="p">);</span>  
+ <span class="cm">/* Do something */</span>
+<span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="exiting-if-fopen-fails">1.6 Exiting if fopen() fails:</h3>
+<p><strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 
+                 <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span> 
+                <span class="kt">char</span> <span class="n">filename</span><span class="p">[]</span><span class="o">=</span> <span class="s">"file2.dat"</span><span class="p">;</span>  
+                <span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span> <span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s">"w"</span><span class="p">);</span> 
+                <span class="k">if</span> <span class="p">(</span><span class="n">fptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>     
+                             <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="n">ERROR</span> <span class="n">IN</span> <span class="kt">FILE</span> <span class="n">CREATION</span><span class="err">”</span><span class="p">);</span>  
+                            <span class="cm">/* Do something */</span>
+                <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+                <span class="p">}</span>
+<span class="err">…</span></code></pre></figure>
+
+<h3 id="reading-and-writing-in-a-file">2. Reading and Writing in a file.</h3>
+
+<h3 id="writing-to-a-file-using-fprintf">2.1Writing to a file using fprintf():</h3>
+
+<p>sfprintf() works just like printf() and sprintf() except that its first argument is a file pointer
+<strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">          <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span> 
+          <span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span> <span class="p">(</span><span class="s">"file.dat"</span><span class="p">,</span><span class="s">"w"</span><span class="p">);</span> 
+          <span class="cm">/* Check it's open */</span> 
+          <span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span> <span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+          <span class="n">fprintf</span> <span class="p">(</span><span class="n">fptr</span><span class="p">,</span> <span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> 
+          <span class="n">fprintf</span> <span class="p">(</span><span class="n">fptr</span><span class="p">,</span> <span class="err">“</span><span class="o">%</span><span class="n">d</span> <span class="o">%</span><span class="n">d</span><span class="err">”</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span></code></pre></figure>
+
+<p>The above program opens a file named file.dat and writes “Hello World!” and the values of two integers a &amp; b into the file.</p>
+
+<h3 id="reading-from-a-file-using-fscanf">2.2 Reading from a file using fscanf():</h3>
+<p><strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                  <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span>
+                  <span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span> <span class="p">(</span><span class="err">“</span><span class="n">input</span><span class="p">.</span><span class="n">dat</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">r</span><span class="err">”</span><span class="p">);</span> 
+                  <span class="cm">/* Check it's open */</span>
+                  <span class="k">if</span> <span class="p">(</span><span class="n">fptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+                           <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">Error</span> <span class="n">in</span> <span class="n">opening</span> <span class="n">file</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">);</span> 
+                       <span class="p">}</span>
+                  <span class="n">fscanf</span> <span class="p">(</span><span class="n">fptr</span><span class="p">,</span> <span class="err">“</span><span class="o">%</span><span class="n">d</span> <span class="o">%</span><span class="n">d</span><span class="err">”</span><span class="p">,</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span></code></pre></figure>
+
+<p>The above program reads two integer values stored in the file input.dat and stores the integers in x and y.</p>
+
+<h3 id="reading-a-line-from-a-file">2.2.1Reading a line from a file:</h3>
+
+<p><strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span>
+                 <span class="kt">char</span> <span class="n">line</span> <span class="p">[</span><span class="mi">1000</span><span class="p">];</span>
+                <span class="cm">/* Open file and check it is open */</span> 
+                <span class="k">while</span> <span class="p">(</span><span class="n">fgets</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="n">fptr</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>   
+                           <span class="n">printf</span> <span class="p">(</span><span class="s">"Read line %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">line</span><span class="p">);</span> 
+                 <span class="p">}</span></code></pre></figure>
+
+<p>fgets() takes 3 arguments –  a string, maximum number of characters to read, and a file pointer. It returns NULL if there is an error (such as EOF).</p>
+
+<p>###2.3 Writing or Reading a Single Character:
+* Writing/reading a character is equivalent to writing/reading a byte.
+* For stdin and stdout we use putchar() and getchar().</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">              <span class="kt">int</span> <span class="n">getchar</span><span class="p">(</span> <span class="p">);</span> <span class="kt">int</span> <span class="n">getchar</span><span class="p">(</span> <span class="p">);</span>
+              <span class="kt">int</span> <span class="n">putchar</span><span class="p">(</span><span class="kt">int</span>  <span class="n">c</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">fgetc</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">fputc</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li>For file systems we use:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">            <span class="kt">int</span> <span class="n">fgetc</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">fputc</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">);</span></code></pre></figure>
+
+<h3 id="closing-a-file">3. Closing a file:</h3>
+<ul>
+  <li>We can close a file using fclose().</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">         <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span>
+         <span class="kt">char</span> <span class="n">filename</span><span class="p">[]</span><span class="o">=</span> <span class="s">"myfile.dat"</span><span class="p">;</span> 
+         <span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span> <span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s">"w"</span><span class="p">);</span> 
+         <span class="k">if</span> <span class="p">(</span><span class="n">fptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>    
+                <span class="n">printf</span> <span class="p">(</span><span class="s">"Cannot open file to write!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>    
+         <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> 
+         <span class="p">}</span> 
+        <span class="n">fprintf</span> <span class="p">(</span><span class="n">fptr</span><span class="p">,</span><span class="s">"Hello World of filing!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> 
+        <span class="n">fclose</span> <span class="p">(</span><span class="n">fptr</span><span class="p">);</span></code></pre></figure>
+
+<h3 id="three-special-file-streams">4. Three Special File Streams:</h3>
+<p>Three special file streams are defined in the <stdio.h> header
+* stdin reads input from the keyboard
+* stdout send output to the screen
+* stderr prints errors to an error device 
+These file streams can be used with functions like fprintf , fscanf etc</stdio.h></p>
+
+<h3 id="command-line-arguments">5. Command line arguments:</h3>
+<ul>
+  <li>A program can be executed by directly typing a command at the operating system prompt.</li>
+  <li>$ $ cc –o test test.c cc –o test test.c</li>
+  <li>$ $ ./a.out in.dat out.dat ./a.out in.dat out.dat</li>
+  <li>$ $ prog_name param_1 param_2 param_3 ..</li>
+  <li>The individual items specified are separated from one another by spaces.
+    <ul>
+      <li>First item is the program name.</li>
+    </ul>
+  </li>
+  <li>Variables argc and argv keep track of the items specified in the command line.</li>
+  <li>Command line arguments may be passed by specifying them under main().</li>
+</ul>
+
+<p>image should be added</p>
+
+<p><strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                 <span class="cp">#include &lt;stdio.h&gt; 
+</span>                 <span class="cp">#include &lt;string.h&gt; 
+</span>                 <span class="cp">#include &lt;string.h&gt; 
+</span>                 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span><span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> 
+                 <span class="p">{</span>    
+                 <span class="kt">FILE</span> <span class="o">*</span><span class="n">ifp</span><span class="p">,</span> <span class="o">*</span><span class="n">ofp</span><span class="p">;</span>
+                 <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+                 <span class="kt">char</span> <span class="n">src_file</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">dst_file</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span> 
+                 <span class="k">if</span><span class="p">(</span><span class="n">argc</span><span class="o">!=</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span> 
+                         <span class="n">printf</span> <span class="p">(</span><span class="s">"Usage: ./a.out &lt;src_file&gt; &lt;dst_file&gt; </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+                 <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>    
+                 <span class="p">}</span>
+                 <span class="k">else</span> <span class="p">{</span>
+                        <span class="n">strcpy</span> <span class="p">(</span><span class="n">src_file</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+                        <span class="n">strcpy</span> <span class="p">(</span><span class="n">dst_file</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span> 
+                 <span class="p">}</span>
+                 <span class="k">if</span> <span class="p">((</span><span class="n">ifp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">src_file</span><span class="p">,</span><span class="s">"r"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                        <span class="n">printf</span> <span class="p">(</span><span class="s">"File does not exist.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+                 <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+                 <span class="p">}</span>
+                 <span class="k">if</span> <span class="p">((</span><span class="n">ofp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">dst_file</span><span class="p">,</span><span class="s">"w"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                         <span class="n">printf</span> <span class="p">(</span><span class="s">"File not created.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+                 <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">while</span> <span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">ifp</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">fputc</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">ofp</span><span class="p">);</span> 
+                <span class="p">}</span>
+                 <span class="n">fclose</span><span class="p">(</span><span class="n">ifp</span><span class="p">);</span>
+                <span class="n">fclose</span><span class="p">(</span><span class="n">ofp</span><span class="p">);</span> 
+                <span class="p">}</span></code></pre></figure>
+
+
+      </article>
+
+      <nav class="pagination">
+        
+          <a class="pagination-previous" href="/Functions.html">
+            <em>&larr; Previous</em>
+            <strong>Funcitons</strong>
+          </a>
+        
+
+        
+          <a class="pagination-next" href="/Functions.html">
+            <em>Next &rarr;</em>
+            <strong>Funcitons</strong>
+          </a>
+        
+      </nav>
+    </div>
+  </div>
+</main>
+
+<a id="top" class="elevator">
+  <i class="fa fa-angle-up"></i>
+  <span>Back to top</span>
+</a>
+ <p style="
+    font-size: 11px;
+    color: black;
+    text-align: center;
+">CodeHub Application don't have any responsibility/authority on this page Contnet. it is uploaded by anonymous contributors, If you think it is voiliting any of T&amp;C please issue a <a href="#" style="
+    text-decoration: underline;
+    color: black;
+">Take Down Request here</a></p>
+    </div>
+    
+      <div id="overlay" class="page-overlay"></div>
+      <div class="page-menu">
+        <section class="toc-component">
+  <div class="container">
+    <article class="toc-section toc-section--web">
+      <div class="toc-heading">
+        <i class="fa fa-globe"></i>
+        <h3>
+          <a href="">Pintors</a>
+        </h3>
+       
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Pointers.html">
+                  <em>05</em>
+                  Pointers
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--html5">
+      <div class="toc-heading">
+        <i class="fa fa-html5"></i>
+        <h3>
+          <a href="">Structures</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Strctures.html">
+                  <em>03</em>
+                  Structures
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Flow Control</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Flow_Control.html">
+                  <em>04</em>
+                  Flow Control
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="css-basics.html">Arrays</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Arrays.html">
+                  <em>03</em>
+                  Arrays
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Functions</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Functions.html">
+                  <em>01</em>
+                  Funcitons
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Functions.html">
+                  <em>03</em>
+                  Funcitons
+                </a>
+              </li>
+              
+            
+          
+        
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">File Management</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/File-Management.html">
+                  <em>02</em>
+                  File Management
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+  </div>
+</section>
+
+      </div>
+      <div id="close" class="page-close">
+        <a class="page-close-button">
+          Close
+        </a>
+      </div>
+    
+    <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/codemirror.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/mode/xml/xml.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/mode/htmlmixed/htmlmixed.js"></script>
+
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/marksheet.js"></script>
+
+
+  <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/affix.js"></script>
+  <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/post.js"></script>
+
+
+<script async type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Source+Sans+Pro:400,300,700,400italic,700italic:latin', 'Source+Code+Pro::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+ <script>
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('https://codehubplatform.github.io/EnglishWebContent/sw.js').then(function(reg) {
+	    if (!reg.installing) return;
+	    console.log("[*] ServiceWorker is installing...");
+
+	    var worker = reg.installing;
+	    worker.addEventListener('statechange', function() {
+	        if (worker.state == 'redundant') {
+	            console.log('[*] Install failed');
+	        }
+	        if (worker.state == 'installed') {
+	            console.log('[*] Install successful!');
+	        }
+	    });
+	});
+}
+
+</script>
+    
+  </body>
+</html>

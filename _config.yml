@@ -1,0 +1,7 @@
+name: CodeHUb - Platform
+description: Best way to browse and learn programming in your mother tongue
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: :title.html
+url: https://codehubplatform.github.io/EnglishWebContent/

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html class="route- route-post section-structures">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Structures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codehubplatform.github.io/EnglishWebContent/">
+  <meta property="og:title" content="CodeHub">
+  <meta property="og:description" content="CodeHub - is the best way to browse and learn development">
+  <meta property="og:site_name" content="CodeHub">
+  <meta property="og:image" content="https://codehubplatform.github.io/EnglishWebContent/images/marksheet-facebook.png">
+  <meta property="fb:app_id" content="470761896424893">
+  <link rel="manifest" href="/EnglishWebContent/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://codehubplatform.github.io/EnglishWebContent/css/main.css">
+  <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="/css/ie.css" />
+  <![endif]-->
+</head>
+
+  <body>
+    
+
+    <div class="page-hero"></div>
+    <div class="page-body">
+
+      <main class="page-container">
+  <section class="heading">
+    <div class="container">
+      <h1>
+        <em>3.4</em>
+        Structures
+      </h1>
+      <h2></h2>
+      
+    </div>
+  </section>
+
+  <div class="page-content">
+    <div class="container">
+      
+
+
+      <article class="content">
+        <h3 id="definition">1.1 Definition:</h3>
+
+<ul>
+  <li>Structure is a group of data members irrespective of their type.</li>
+  <li>Using structure you can relate one variable of one type to other.</li>
+  <li>Different types of variables can stored under one name, so if you want to store information like name, address , phone number you can use structures and can store all this for different persons.</li>
+</ul>
+
+<p><strong>Syntax:</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                <span class="k">struct</span> <span class="n">tag</span> <span class="p">{</span>
+               <span class="n">type</span> <span class="n">member</span> <span class="mi">1</span><span class="p">;</span>     
+               <span class="n">type</span> <span class="n">member</span> <span class="mi">2</span><span class="p">;</span>          
+                    <span class="o">:</span>
+                    <span class="o">:</span>             
+               <span class="n">type</span> <span class="n">member</span> <span class="n">m</span><span class="p">;</span>
+                    <span class="p">};</span>  </code></pre></figure>
+
+<ul>
+  <li>
+    <p>Data members include pointers, arrays as well.</p>
+  </li>
+  <li>
+    <p>t1 here is structure variable.</p>
+  </li>
+  <li>
+    <p>struct tag is new data type of t1.</p>
+  </li>
+</ul>
+
+<p>We can define structure variable in following way</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">                     
+
+<span class="k">struct</span> <span class="n">tag</span> <span class="n">t1</span><span class="p">;</span>       
+
+<span class="o">*</span> <span class="k">struct</span> <span class="n">is</span> <span class="n">a</span> <span class="n">keyword</span><span class="p">,</span> <span class="n">so</span> <span class="n">write</span> <span class="n">it</span> <span class="n">as</span> <span class="n">it</span> <span class="n">is</span><span class="p">.</span>
+
+<span class="o">*</span> <span class="n">tag</span> <span class="n">can</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">any</span> <span class="n">name</span> <span class="n">you</span> <span class="n">want</span> <span class="n">structure</span> <span class="n">to</span> <span class="n">have</span><span class="p">.</span>
+
+<span class="o">*</span> <span class="n">member</span> <span class="mi">1</span><span class="p">,</span> <span class="n">member</span> <span class="mi">2</span> <span class="n">are</span> <span class="n">data</span> <span class="n">members</span> <span class="n">which</span> <span class="n">can</span> <span class="n">be</span> <span class="n">of</span> <span class="n">same</span> <span class="n">or</span> <span class="n">different</span> <span class="n">data</span> <span class="n">type</span><span class="p">.</span>
+
+ <span class="k">struct</span> <span class="n">tag</span> <span class="p">{</span>
+                 <span class="n">member</span> <span class="mi">1</span><span class="p">;</span>     
+                 <span class="n">member</span> <span class="mi">2</span><span class="p">;</span>          
+                    <span class="o">:</span>         
+                 <span class="n">member</span> <span class="n">m</span><span class="p">;</span>
+                        <span class="p">}</span><span class="n">t1</span><span class="p">;</span>  </code></pre></figure>
+
+<h3 id="structure-variables">1.2  Structure variables:</h3>
+
+<ul>
+  <li>Structure variables are those variables which are used to access data members of the structure.</li>
+  <li>They can be defined as follows
+     struct tag <em>var_1, var_2 … var_n;</em></li>
+  <li>Structure variable can be many, and can be represented as arrays like <em>var[100]</em>
+var[100] implies that there are 100 variables which are represented in the form of an  array. <em>var[0],var[1],var[2]…… var[99]</em>(we will see in the following example).
+<strong>Example:</strong></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"> 
+<span class="cp">#include&lt;stdio.h&gt;
+</span><span class="k">struct</span> <span class="n">stud</span>
+<span class="p">{</span>
+<span class="kt">int</span> <span class="n">rollno</span><span class="p">,</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">,</span><span class="n">tot</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+<span class="kt">float</span> <span class="n">avg</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="k">struct</span> <span class="n">stud</span> <span class="n">s</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+ <span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
+ <span class="n">printf</span><span class="p">(</span><span class="s">"enter the number of students</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+ <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+ <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+ <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"Enter the roll number</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">rollno</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"Enter the name</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"enter the marks in 2 subjects</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s">"%d%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s2</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"s2 is: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s2</span><span class="p">);</span>
+ <span class="p">}</span>
+ <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+ <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"roll number: %d </span><span class="se">\n</span><span class="s"> name: %s </span><span class="se">\n</span><span class="s"> subject1: %d </span><span class="se">\n</span><span class="s"> subject2: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">rollno</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s1</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s2</span><span class="p">);</span>
+ <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>By this small code of structures we can understand that whenever we have to store different type of information about many people we can use structures.</li>
+  <li>Here each structure variable represents a person.</li>
+  <li>And the data accessed by structure variable is the information of that person.</li>
+  <li>We can also observe that instead of defining structure variables as s1,s2,s3…s10 we defined it in the form of an array s[10].</li>
+  <li>So whenever there is any need to store data for large number of people writing structure variable in the form of an array can make things quite easier.</li>
+</ul>
+
+<h3 id="structure-initialisation">1.3 Structure Initialisation:</h3>
+
+<ul>
+  <li>Structure variables can be initialised as follows:
+<em><strong>Struct tag name={ value_for_data1,value _for_data2…, value_for_data n}</strong></em></li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
+</span> 
+<span class="k">struct</span> <span class="n">example</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+ 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">struct</span> <span class="n">example</span> <span class="n">e1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">};</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"values</span><span class="se">\n</span><span class="s">: e1.x=%d</span><span class="se">\t</span><span class="s">e1.y=%d"</span><span class="p">,</span><span class="n">e1</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">e1</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+  <span class="n">getchar</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="structure-variables-1">1.4 Structure Variables</h3>
+
+<p>Copying data of one structure variable to other is quite easy, and can be done as shown
+    <em><strong>struct_var1=struct_var2.</strong></em></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="o">**</span><span class="n">Example</span><span class="o">**</span>
+
+<span class="cp">#include &lt;stdio.h&gt;
+</span> 
+<span class="k">struct</span> <span class="n">example</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+ 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">struct</span> <span class="n">example</span> <span class="n">e1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">};</span>
+  <span class="k">struct</span> <span class="n">example</span> <span class="n">e2</span> <span class="o">=</span> <span class="n">e1</span><span class="p">;</span> <span class="c1">// works: contents of e1 are copied to e1
+</span>  <span class="n">printf</span><span class="p">(</span><span class="s">"values</span><span class="se">\n</span><span class="s">: e2.x=%d</span><span class="se">\t</span><span class="s">e2.y=%d"</span><span class="p">,</span><span class="n">e2</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">e2</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+  <span class="n">getchar</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Output:
+values:
+e2.x=10		e2.y=20</p>
+
+<ul>
+  <li>We can see that though p2.x and p2.y were not initialised still in output we can see their values as 10 and 20.</li>
+  <li>It is because we assigned one structure variable to other of same type i.e. same structure p2=p1.</li>
+</ul>
+
+<h3 id="typedef">1.5 Typedef</h3>
+
+<ul>
+  <li>Typedef is a keyword used in C language to assign alternative names to existing types.</li>
+  <li>Typedef can be used to give a name to user defined data type as well.</li>
+</ul>
+
+<p><code class="highlighter-rouge">Syntax:</code>
+typedef struct
+{
+                                           type member 1;   <br />
+               type member 2;        <br />
+                    :
+                    :           <br />
+               type member m;</p>
+
+<p>} type_name;</p>
+
+<ul>
+  <li>Now type_name can be used to declare a variable of this structure type.
+     <strong>type_name t1,t2;</strong></li>
+  <li>Now t1 and t2 can be used as normal structure variable.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt; 
+</span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span><span class="n">exp</span><span class="p">;</span>
+  <span class="n">exp</span> <span class="n">e1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"enter x and y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">"%d%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">e1</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="o">&amp;</span><span class="n">e1</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"values</span><span class="se">\n</span><span class="s">: e1.x=%d</span><span class="se">\t</span><span class="s">e1.y=%d"</span><span class="p">,</span><span class="n">e1</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">e1</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+  <span class="n">getchar</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="passing-parameter-to-the-function">1.6 Passing Parameter to the function:</h3>
+
+<ul>
+  <li>Structure variable can be passed as parameters to any function.</li>
+  <li>It can done as follows.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt; 
+</span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span><span class="n">exp</span><span class="p">;</span>
+  <span class="n">exp</span> <span class="n">e1</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">display</span><span class="p">(</span><span class="n">exp</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"numbers entered are: %d</span><span class="se">\t</span><span class="s">%d"</span><span class="p">,</span><span class="n">e</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">e</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"enter x and y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">"%d%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">e1</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="o">&amp;</span><span class="n">e1</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="n">display</span><span class="p">(</span><span class="n">e1</span><span class="p">);</span>
+  <span class="n">getchar</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="returning-structure-variables">1.7 Returning structure variables:</h3>
+<p>We can return structure variables from any function, like any other variable.
+The return type of the function should be same as that of the structure variable we are returning.
+<strong>Example:</strong></p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt; 
+</span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">z</span><span class="p">;</span>
+<span class="p">}</span><span class="n">exp</span><span class="p">;</span>
+  <span class="n">exp</span> <span class="n">e1</span><span class="p">;</span>
+<span class="n">exp</span> <span class="nf">sum</span><span class="p">(</span><span class="n">exp</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+ <span class="n">exp</span> <span class="n">ex</span><span class="p">;</span>
+ <span class="n">ex</span><span class="p">.</span><span class="n">z</span><span class="o">=</span><span class="n">e</span><span class="p">.</span><span class="n">x</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="k">return</span> <span class="n">ex</span><span class="p">;</span> 
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"enter x and y</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">"%d%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">e1</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="o">&amp;</span><span class="n">e1</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="n">exp</span> <span class="n">i</span><span class="o">=</span><span class="n">sum</span><span class="p">(</span><span class="n">e1</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"sum of two numbers entered is: %d"</span><span class="p">,</span><span class="n">i</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+      <span class="n">getchar</span><span class="p">();</span>
+      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+
+      </article>
+
+      <nav class="pagination">
+        
+          <a class="pagination-previous" href="/Pointers.html">
+            <em>&larr; Previous</em>
+            <strong>Pointers</strong>
+          </a>
+        
+
+        
+          <a class="pagination-next" href="/Flow_Control.html">
+            <em>Next &rarr;</em>
+            <strong>Flow Control</strong>
+          </a>
+        
+      </nav>
+    </div>
+  </div>
+</main>
+
+<a id="top" class="elevator">
+  <i class="fa fa-angle-up"></i>
+  <span>Back to top</span>
+</a>
+ <p style="
+    font-size: 11px;
+    color: black;
+    text-align: center;
+">CodeHub Application don't have any responsibility/authority on this page Contnet. it is uploaded by anonymous contributors, If you think it is voiliting any of T&amp;C please issue a <a href="#" style="
+    text-decoration: underline;
+    color: black;
+">Take Down Request here</a></p>
+    </div>
+    
+      <div id="overlay" class="page-overlay"></div>
+      <div class="page-menu">
+        <section class="toc-component">
+  <div class="container">
+    <article class="toc-section toc-section--web">
+      <div class="toc-heading">
+        <i class="fa fa-globe"></i>
+        <h3>
+          <a href="">Pintors</a>
+        </h3>
+       
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Pointers.html">
+                  <em>05</em>
+                  Pointers
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--html5">
+      <div class="toc-heading">
+        <i class="fa fa-html5"></i>
+        <h3>
+          <a href="">Structures</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Strctures.html">
+                  <em>03</em>
+                  Structures
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Flow Control</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Flow_Control.html">
+                  <em>04</em>
+                  Flow Control
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="css-basics.html">Arrays</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Arrays.html">
+                  <em>03</em>
+                  Arrays
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">Functions</a>
+        </h3>
+        
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Functions.html">
+                  <em>01</em>
+                  Funcitons
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/Functions.html">
+                  <em>03</em>
+                  Funcitons
+                </a>
+              </li>
+              
+            
+          
+        
+      </ol>
+    </article>
+
+
+    <article class="toc-section toc-section--css3">
+      <div class="toc-heading">
+        <i class="fa fa-css3"></i>
+        <h3>
+          <a href="">File Management</a>
+        </h3>
+       
+      </div>
+      <ol class="toc-content">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+              <li class="toc-month">
+                <a href="/File-Management.html">
+                  <em>02</em>
+                  File Management
+                </a>
+              </li>
+              
+            
+          
+        
+          
+          
+        
+      </ol>
+    </article>
+  </div>
+</section>
+
+      </div>
+      <div id="close" class="page-close">
+        <a class="page-close-button">
+          Close
+        </a>
+      </div>
+    
+    <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/codemirror.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/mode/xml/xml.js"></script>
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/mode/htmlmixed/htmlmixed.js"></script>
+
+<script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/marksheet.js"></script>
+
+
+  <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/affix.js"></script>
+  <script type="text/javascript" src="https://codehubplatform.github.io/EnglishWebContent/javascript/post.js"></script>
+
+
+<script async type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Source+Sans+Pro:400,300,700,400italic,700italic:latin', 'Source+Code+Pro::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+ <script>
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('https://codehubplatform.github.io/EnglishWebContent/sw.js').then(function(reg) {
+	    if (!reg.installing) return;
+	    console.log("[*] ServiceWorker is installing...");
+
+	    var worker = reg.installing;
+	    worker.addEventListener('statechange', function() {
+	        if (worker.state == 'redundant') {
+	            console.log('[*] Install failed');
+	        }
+	        if (worker.state == 'installed') {
+	            console.log('[*] Install successful!');
+	        }
+	    });
+	});
+}
+
+</script>
+    
+  </body>
+</html>
